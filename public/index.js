@@ -9,15 +9,22 @@ const today = () => {
   dd = dd < 10 ? `0${dd}` : dd;
 
   let mm = date.getMonth();
-  mm = mm < 10 ? `:0${mm}` : `:${mm}`;
+  mm = mm < 10 ? `/0${mm}` : `:${mm}`;
 
   let year = date.getFullYear();
-  year = `:${year}`
+  year = `/${year}`
   day.innerHTML = `${dd}${mm}${year}`
 }
 
 const renderData = dataArr => {
-  const tr = dataArr.map(data => {
+
+  const trTh = dataArr.map(data => {
+    return `
+            <th> ${data.ccy}</th>
+          `;
+  }).join('');
+
+  const trTd = dataArr.map(data => {
     return `
             <td>${parseFloat(data.sale).toFixed(2)} ${data.base_ccy}</td>
           `;
@@ -28,13 +35,10 @@ const renderData = dataArr => {
   host.innerHTML = `
            <table id="cash">
               <tr>
-              <th>USD</th>
-              <th>EUR</th>
-              <th>RUR</th>
-              <th>BTC</th>
+              ${trTh}
               </tr>
               <tr>
-                ${tr}
+                ${trTd}
               </tr>
           </table>
       `;
