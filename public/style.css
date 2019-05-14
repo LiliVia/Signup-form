@@ -9,28 +9,51 @@ body {
   height: 100%;
 }
 
-main,
-.container {
+main, .container, form, label {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  margin: 15px;
 }
-
-table,
-th,
-tr {
-  border: 1px solid black;
-  border-collapse: collapse;
+main #date, .container #date, form #date, label #date {
+  margin: -0.5em 0 1em;
 }
-
-table {
-  border-spacing: 5px;
+main #date:before, .container #date:before, form #date:before, label #date:before {
+  content: 'on ';
 }
-
-th,
-tr {
-  padding: 10px 45px;
+main td:first-child, .container td:first-child, form td:first-child, label td:first-child {
+  color: lightcoral;
+  font-weight: 600;
+}
+main th, .container th, form th, label th, main td, .container td, form td, label td {
+  padding: 0.5em;
+  border: 2px solid cyan;
+}
+main form, .container form, form form, label form {
+  margin-top: 15px;
+  align-items: initial;
+}
+main form label, .container form label, form form label, label form label {
+  align-items: flex-end;
+}
+main form label input, .container form label input, form form label input, label form label input {
+  padding: 0.3em;
+  width: 320px;
+}
+main form .btn, .container form .btn, form form .btn, label form .btn {
+  padding: 0.7em;
+  background: cyan;
+  border: 2px solid cyan;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  color: blue;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+main form .btn:hover, .container form .btn:hover, form form .btn:hover, label form .btn:hover {
+  cursor: pointer;
+  background: blue;
+  border-color: blue;
+  color: white;
 }
