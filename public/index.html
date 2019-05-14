@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Current Carrency</title>
+    <title>Exchange Rates</title>
 </head>
 
 <body>
     <main>
         <div class="container">
-            <h3>Cash exchange rate</h3>
+            <h3>Private Exchange Rates</h3>
             <h3 id="date"></h3>
             <div id="currency">
             </div>
         </div>
         <div class="container login">
-            <form action="/auth" method="post">
+            <form action="/auth" method="post" id="login-form">
                 <label>
                   Name
                     <input type="text" name="name" placeholder="Name" maxlength="25">
